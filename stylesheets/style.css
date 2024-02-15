@@ -21,18 +21,17 @@
 
 html, body {
     margin: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 h1, h2 {
     margin: 12px 0;
-    font-family: 'Raleway', sans-serif;
     font-size: 32px;
     font-weight: 300;
 }
 
 h3, h4 {
     margin: 12px 0;
-    font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
 
@@ -47,14 +46,12 @@ h4 {
 
 h5, h6 {
     margin: 4px 0;
-    font-family: 'Raleway', sans-serif;
     font-size: 19px;
     font-weight: 600;
 }
 
 p {
     margin: 12px 0;
-    font-family: 'Raleway', sans-serif;
     font-size: 17px;
     font-weight: 500;
 }
