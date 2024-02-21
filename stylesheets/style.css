@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap'); */
 
 :root {
-    /* Main colors */
+    /* main colors */
     --green-600: #278c27;
+    --gray-600: #2e2e2e;
+    --gray-800: #222;
     --white: #FFF;
 
     /* backgrounds */
     --gray-100: #FAF8F8;
     --gray-200: #E7E8EC;
-    
+
     /* text */
     --gray-400: #5C6166;
 
@@ -51,6 +53,13 @@ h5, h6 {
     font-weight: 600;
 }
 
+a {
+    color: var(--gray-200);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 400;
+}
+
 p {
     margin: 12px 0;
     font-size: 17px;
@@ -72,79 +81,7 @@ p.txt-sm {
     font-weight: 500;
 }
 
-/* GDPR */
-
-.gdpr-consent {
-    background-color: var(--gray-100);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid gray;
-    border-radius: 15px 15px 15px 15px;
-}
-
-.gdpr-consent__description{
-    display: flex;
-    justify-content: center;
-}
-
-.gdpr-consent__choice{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.gdpr-consent__choice{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.gdpr-consent__button--accept {
-    background-color: var(--green-400);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid gray;
-}
-
-.gdpr-consent__button--accept:hover {
-    background-color: var(--green-500);
-}
-
-.gdpr-consent__button--reject {
-    background-color: var(--red-400);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid gray;
-}
-
-.gdpr-consent__button--reject:hover {
-    background-color: var(--red-500);
-}
-
-.hide{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
-/* Navigation */
-
-.nav-mobile {
-    
-}
-
-/* Profile page */
+/* profile page */
 
 .profile-page {
     display: inline-grid;
@@ -161,13 +98,16 @@ p.txt-sm {
     background-color: var(--gray-200);
 }
 
+.personalia h1 {
+    text-align: center;
+}
+
 .person-logo {
     border: 1.5px solid #222;
     border-radius: 50%;
     margin: 16px 0 8px;
     width: 45%;
     max-width: 200px;
-    animation: glow 3s ease alternate;
 }
 
 .profile {
@@ -180,14 +120,115 @@ p.txt-sm {
     margin: 12px 0 24px;
 }
 
-/* Desktop */
+/* navigation */
+
+.nav {
+    background: #222;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.nav__link {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo__link {
+    margin: 8px 0 12px;
+    align-self: center;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+}
+
+.nav-mobile {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.nav-desktop {
+    display: none;
+}
+
+.nav-open {
+    margin-left: 0;
+}
+
+.nav-closed {
+    margin-left: -250px;
+}
+
+.show-nav__btn {
+    position: absolute;
+}
+
+.show-nav__svg {
+    margin: 10px 0 0 12px;
+    width: 32px;
+    height: 32px;
+}
+
+.close-nav__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+}
+
+.close-nav__svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Tablet / small desktop */
 @media (min-width: 840px) {
+
     .profile-page {
-        grid-template-columns: 40% auto;
+        grid-template-columns: 50% auto;
         grid-template-rows: none;
+        margin-left: 220px;
+        width: calc(100vw - 220px);
+        position: relative;
+        overflow: auto;
+    }
+
+    .personalia, .profile {
+        height: 100vh;
     }
 
     .person-logo {
         width: 70%;
+    }
+
+    /* Navigation */
+    .nav-mobile, .show-nav__btn {
+        display: none;
+    }
+
+    .nav-desktop {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .nav__link:hover {
+        background-color: var(--gray-600);
+        transition: 250ms ease;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1300px) {
+
+    .profile-page {
+        grid-template-columns: 33% auto;
     }
 }
