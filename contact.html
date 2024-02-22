@@ -14,7 +14,7 @@
     <script defer src="../js/gdpr.js"></script>
     <script defer src="../js/nav-mobile.js"></script>
 
-    <title>Contact</title>
+    <title>Contact me</title>
 </head>
 
 <body>
@@ -42,9 +42,35 @@
         <a href="../contact.html" class="nav__link">Contact</a>
     </nav>
 
-    <div class="contact-page">
+    <div class="contact-page page">
 
+        <section class="contact-page__heading">
+            <h1>Neem contact op!</h2>
+                <p>
+                    Als je contact met mij wilt op nemen kan je dit formulier invullen en verzenden.
+                </p>
+        </section>
 
+        <form class="contact-form" action="">
+
+            <label class="contact-form__label" for="name">Naam</label>
+            <input id="name" class="contact-form__input" name="name" type="text" required>
+
+            <label class="contact-form__label" for="email">Email</label>
+            <input id="email" class="contact-form__input" name="email" type="email" required>
+
+            <label class="contact-form__label" for="phone">Telefoonnummer</label>
+            <input id="phone" class="contact-form__input" name="phone" type="text" required>
+
+            <label class="contact-form__label" for="subject">Onderwerp</label>
+            <input id="subject" class="contact-form__input" name="subject" type="text" required>
+
+            <label class="contact-form__label" for="contents">Inhoud</label>
+            <textarea id="contents" class="contact-form__textarea" name="contents" type="text" required></textarea>
+
+        </form>
+
+        <button class="btn-send">Verzend</button>
 
     </div>
 
